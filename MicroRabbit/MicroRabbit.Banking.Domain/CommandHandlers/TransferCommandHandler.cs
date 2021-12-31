@@ -2,11 +2,6 @@
 using MicroRabbit.Banking.Domain.Commands;
 using MicroRabbit.Banking.Domain.Events;
 using MicroRabbit.Domain.Core.Bus;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MicroRabbit.Banking.Domain.CommandHandlers
 {
@@ -26,7 +21,7 @@ namespace MicroRabbit.Banking.Domain.CommandHandlers
 			//publish event to rabbitMQ
 			_bus.Publish(new TransferCreatedEvent(request.From, request.To, request.Amount));
 
-				return Task.FromResult(true);
+			return Task.FromResult(true);
 		}
 	}
 }
